@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Automotive & Research connects clients with freelancers across research, writing, design, technology, automotive and more.">
+<title>Automotive & Research | Freelance Marketplace</title>
+<style>
+:root{--navy:#101b35;--blue:#3268e8;--sky:#eaf0ff;--ink:#182238;--muted:#6c7890;--line:#e6eaf1;--bg:#f6f8fc;--white:#fff;--green:#16845b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.topbar{height:72px;background:var(--white);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,20px);position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy);font-size:17px}.logo{width:38px;height:38px;border-radius:12px;background:var(--blue);color:white;display:grid;place-items:center;font-weight:900}
+nav{display:flex;gap:8px;align-items:center}nav button,.navlink{background:transparent;color:#536079;padding:10px 13px;border-radius:9px;font-weight:650}nav button.active,nav button:hover{background:var(--sky);color:var(--blue)}
+.btn{background:var(--blue);color:white;padding:11px 17px;border-radius:10px;font-weight:700}.btn:hover{filter:brightness(.95)}.btn.secondary{background:var(--sky);color:var(--blue)}.btn.dark{background:var(--navy)}.access-pill{display:inline-flex;gap:6px;align-items:center;padding:6px 10px;border-radius:20px;background:#fff4db;color:#8a5b00;font-size:12px;font-weight:750}.btn.small{padding:8px 12px;font-size:13px}
+main{max-width:1180px;margin:0 auto;padding:34px 22px 70px}.hero{background:linear-gradient(120deg,#101b35,#1e3974);border-radius:24px;color:white;padding:44px;display:grid;grid-template-columns:1.35fr .65fr;gap:25px;overflow:hidden;position:relative}.eyebrow{color:#a9c1ff;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:800}.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.08;margin:12px 0}.hero p{color:#d3dcf1;max-width:610px;font-size:17px}.hero .btn{background:#fff;color:var(--navy);margin-top:12px}.hero-art{display:grid;place-items:center;font-size:100px;opacity:.95}.hero-stats{display:flex;gap:30px;margin-top:26px}.hero-stats strong{display:block;font-size:22px}.hero-stats span{color:#c5d0e7;font-size:12px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:34px 0 16px}.section-head h2{margin:0;font-size:24px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 4px 18px #16294b08}.job-card{display:flex;flex-direction:column;min-height:220px}.job-card h3{margin:10px 0 5px;font-size:18px}.tag{display:inline-flex;background:#eef3ff;color:#315ec2;padding:5px 9px;border-radius:20px;font-size:12px;font-weight:750}.job-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin:13px 0}.job-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:auto}.price{font-size:19px;font-weight:800;color:var(--navy)}
+.toolbar{display:flex;gap:10px;margin:18px 0;flex-wrap:wrap}.toolbar input,.toolbar select{max-width:260px}
+input,select,textarea{width:100%;border:1px solid #dce2ec;border-radius:10px;padding:11px 12px;background:white;color:var(--ink);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #3268e81a}label{display:block;font-size:13px;font-weight:700;margin:12px 0 6px}.form-card{max-width:680px;margin:auto}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.full{grid-column:1/-1}
+.page-title{margin:0 0 5px;font-size:30px}.notice{padding:13px 15px;background:#fff8e7;border:1px solid #f3dfaa;color:#795a12;border-radius:11px;font-size:13px;margin:18px 0}
+.empty{text-align:center;padding:45px 20px;color:var(--muted)}.empty .emoji{font-size:38px}.hidden{display:none!important}
+.dashboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}.stat{padding:18px}.stat span{color:var(--muted);font-size:13px}.stat strong{display:block;font-size:27px;margin-top:4px}
+.table-wrap{overflow:auto;background:white;border:1px solid var(--line);border-radius:14px}table{border-collapse:collapse;width:100%;min-width:620px}th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);font-size:14px}th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px}tr:last-child td{border-bottom:0}
+.modal-backdrop{position:fixed;inset:0;background:#0b1429a8;display:grid;place-items:center;padding:20px;z-index:10}.modal{background:white;border-radius:18px;padding:24px;width:min(520px,100%);max-height:90vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:center}.close{background:#eef1f6;border-radius:50%;width:32px;height:32px;font-size:20px}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--navy);color:white;padding:13px 18px;border-radius:12px;z-index:20;box-shadow:0 8px 30px #0003}
+footer{padding:25px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:30px}.hero-art{display:none}.grid{grid-template-columns:repeat(2,1fr)}nav{gap:0}nav button{padding:8px;font-size:13px}.brand span:last-child{display:none}}
+@media(max-width:560px){.topbar{padding:0 12px;height:64px}.logo{width:34px;height:34px}nav button{font-size:12px;padding:7px}.grid,.dashboard-grid,.form-grid{grid-template-columns:1fr}.hero{padding:25px 21px}.hero-stats{gap:18px}main{padding:22px 14px 50px}.section-head{align-items:start;flex-direction:column}.form-grid .full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo">A&R</div><span>Automotive & Research</span></div>
+  <nav aria-label="Main navigation">
+    <button class="active" data-page="home">Home</button>
+    <button data-page="jobs">Find work</button>
+    <button data-page="post">Post a job</button>
+    <button data-page="dashboard">Dashboard</button>
+    <button data-page="admin">Admin</button>
+  </nav>
+  <button class="btn small" id="accountBtn">Sign in</button>
+</header>
+<main>
+  <section id="homePage">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Your work. Your opportunity.</div>
+        <h1>Great work starts with the right opportunity.</h1>
+        <p>Discover freelance projects, share your skills, deliver quality work and grow your professional experience — all in one place.</p>
+        <button class="btn" onclick="showPage('jobs')">Explore available jobs →</button>
+        <div class="hero-stats"><div><strong id="heroJobs">0</strong><span>Open projects</span></div><div><strong>All skills</strong><span>Many job categories</span></div><div><strong>One place</strong><span>Work and collaborate</span></div></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">💼</div>
+    </div>
+    <div class="section-head"><div><h2>Featured opportunities</h2><div class="muted">A few projects to get you started</div></div><button class="btn secondary small" onclick="showPage('jobs')">View all jobs</button></div>
+    <div class="grid" id="featuredJobs"></div>
+    <div class="section-head"><div><h2>How it works</h2><div class="muted">A simple path from opportunity to delivery</div></div></div>
+    <div class="grid">
+      <div class="card"><span class="tag">01 · Discover</span><h3>Find a project</h3><p class="muted">Browse projects that match your interests and skills.</p></div>
+      <div class="card"><span class="tag">02 · Deliver</span><h3>Submit your work</h3><p class="muted">Apply, complete the task and upload your deliverables.</p></div>
+      <div class="card"><span class="tag">03 · Get paid</span><h3>Track payment</h3><p class="muted">Follow approval and payment status from your dashboard.</p></div>
+    </div>
+    <div class="notice">Demo version: profiles, jobs, submissions and fee status are stored in this browser only. Payment buttons simulate status changes and never charge money. Real shared accounts, file storage and payment verification require a secure backend.</div>
+  </section>
+
+  <section id="jobsPage" class="hidden">
+    <h1 class="page-title">Find freelance work</h1><p class="muted">Explore projects from different categories.</p>
+    <div class="toolbar"><input id="searchJobs" placeholder="Search projects or skills…"><select id="categoryFilter"><option value="">All categories</option></select></div>
+    <div class="grid" id="allJobs"></div>
+  </section>
+
+  <section id="postPage" class="hidden">
+    <div class="card form-card">
+      <h1 class="page-title">Post a project</h1><p class="muted">Describe the work you need completed.</p>
+      <form id="postForm">
+        <label for="jobTitle">Project title</label><input id="jobTitle" required maxlength="80" placeholder="e.g. Research and write a market summary">
+        <div class="form-grid"><div><label for="jobCategory">Category</label><select id="jobCategory" required></select></div><div><label for="jobBudget">Budget (KES)</label><input id="jobBudget" type="number" min="1" required placeholder="e.g. 3000"></div></div>
+        <label for="jobDescription">Project description</label><textarea id="jobDescription" rows="5" required maxlength="1200" placeholder="Explain the task, expected result and deadline…"></textarea>
+        <label for="jobSkills">Skills required (optional)</label><input id="jobSkills" placeholder="e.g. Writing, Excel, research">
+        <button class="btn" style="margin-top:18px" type="submit">Publish project</button>
+      </form>
+      <div class="notice">For this prototype, projects are saved locally in this browser and are not visible to other people online.</div>
+    </div>
+  </section>
+
+  <section id="dashboardPage" class="hidden">
+    <h1 class="page-title">Your dashboard</h1><p class="muted" id="welcomeText">Sign in or create a demo profile to personalize your workspace.</p>
+    <div class="dashboard-grid">
+      <div class="card stat"><span>Projects available</span><strong id="statOpen">0</strong></div>
+      <div class="card stat"><span>Your applications</span><strong id="statApplied">0</strong></div>
+      <div class="card stat"><span>Demo earnings</span><strong id="statEarnings">KES 0</strong></div>
+    </div>
+    <div class="section-head"><div><h2>Your activity</h2><div class="muted">Applications and work submissions on this device</div></div></div>
+    <div class="table-wrap"><table><thead><tr><th>Project</th><th>Category</th><th>Status</th><th>Budget</th><th>Action</th></tr></thead><tbody id="activityRows"><tr><td colspan="5" class="muted">No activity yet. Browse projects to get started.</td></tr></tbody></table></div>
+    <div class="card" style="margin:18px 0"><div class="section-head" style="margin:0 0 10px"><div><h2>Freelancer access</h2><div class="muted">Registration and attempt-fee rules</div></div><span class="access-pill" id="accessStatus">Demo payment mode</span></div><p id="feeSummary" class="muted">Registration fee and attempt fee amounts must be configured before launch.</p><p><b>Attempts used in this cycle:</b> <span id="attemptCount">0</span> / 3</p><button class="btn secondary small" onclick="showFeeInfo()">View payment rules</button></div>
+    <div class="section-head"><div><h2>Work submissions</h2><div class="muted">Submit completed work or review submissions on projects you posted.</div></div></div>
+    <div id="submissionsList" class="grid"></div>
+    <div class="notice">Prototype limitation: choosing a file records its name and details in this browser, but does not transmit the file to another user. Secure shared file storage and real client review require the backend milestone. Payments are placeholders; no money is collected or transferred.</div>
+  </section>
+
+  <section id="adminPage" class="hidden">
+    <div class="section-head" style="margin-top:0">
+      <div><h1 class="page-title">Admin workspace</h1><p class="muted">Manage demo marketplace settings and review activity saved in this browser.</p></div>
+      <button class="btn secondary small" onclick="exportBackup()">Export demo data</button>
+    </div>
+    <div class="notice"><b>Important:</b> this is a front-end preview, not a secure administrator account. Anyone who can open this page can see this demo panel and change local settings. Do not use it to manage real users, collect fees or handle payouts. A live admin panel needs server-side login and permissions.</div>
+    <div class="dashboard-grid">
+      <div class="card stat"><span>Projects posted</span><strong id="adminJobs">0</strong></div>
+      <div class="card stat"><span>Applications</span><strong id="adminApps">0</strong></div>
+      <div class="card stat"><span>Submissions</span><strong id="adminSubs">0</strong></div>
+    </div>
+    <div class="card" style="margin:18px 0">
+      <h2 style="margin-top:0">Fee settings</h2>
+      <p class="muted">Set the amounts you intend to charge. These values are saved only in this browser and are displayed for planning; no payment is taken.</p>
+      <form id="feeSettingsForm" class="form-grid">
+        <div><label for="registrationFee">Freelancer registration fee (KES)</label><input id="registrationFee" type="number" min="0" step="1" placeholder="Enter amount"></div>
+        <div><label for="attemptFee">Fee after every 3 attempts (KES)</label><input id="attemptFee" type="number" min="0" step="1" placeholder="Enter amount"></div>
+        <div class="full"><button class="btn" type="submit">Save fee settings</button></div>
+      </form>
+      <p class="muted" id="feeSettingsStatus" style="font-size:13px">No fee amounts configured.</p>
+    </div>
+    <div class="card" style="margin:18px 0">
+      <h2 style="margin-top:0">Project management</h2>
+      <p class="muted">Remove demo listings from this browser. This does not affect any other visitor.</p>
+      <div class="table-wrap"><table><thead><tr><th>Project</th><th>Client</th><th>Budget</th><th>Action</th></tr></thead><tbody id="adminJobRows"></tbody></table></div>
+    </div>
+    <div class="card" style="margin:18px 0">
+      <h2 style="margin-top:0">Recent marketplace activity</h2>
+      <div class="table-wrap"><table><thead><tr><th>Project</th><th>Freelancer</th><th>Submission status</th><th>File name (demo)</th></tr></thead><tbody id="adminSubmissionRows"></tbody></table></div>
+    </div>
+  </section>
+</main>
+<footer>© 2026 Automotive & Research · Freelance opportunities for every skill. Demo build.</footer>
+
+<div id="modalRoot" class="hidden"></div>
+<div id="toast" class="toast hidden" role="status"></div>
+
+<script>
+const categories=["Writing & Translation","Research & Data","Graphic Design","Web & Software","Marketing & Social Media","Video & Animation","Business & Admin","Automotive","Education & Tutoring","Other"];
+const starterJobs=[
+{id:1,title:"Research competitor pricing",category:"Research & Data",budget:3500,description:"Prepare a concise comparison of publicly available prices from five competitors. Include source links and a short summary.",skills:"Desk research, spreadsheets",client:"A&R Demo Client"},
+{id:2,title:"Design a clean social media flyer",category:"Graphic Design",budget:1800,description:"Create a simple promotional flyer for a small business. Supply a web-ready image and editable source file.",skills:"Canva, layout design",client:"A&R Demo Client"},
+{id:3,title:"Write an automotive blog article",category:"Automotive",budget:2500,description:"Write an informative beginner-friendly article about routine vehicle maintenance. Include reliable sources.",skills:"Writing, automotive knowledge",client:"A&R Demo Client"}
+];
+let jobs=JSON.parse(localStorage.getItem("ar_jobs")||"null")||starterJobs;
+let applications=JSON.parse(localStorage.getItem("ar_apps")||"[]");
+let submissions=JSON.parse(localStorage.getItem("ar_submissions")||"[]");
+let billing=JSON.parse(localStorage.getItem("ar_billing")||"null")||{registrationPaid:false,attemptsUsed:0,cycleFeePaid:false};
+let profile=JSON.parse(localStorage.getItem("ar_profile")||"null");
+let feeSettings=JSON.parse(localStorage.getItem("ar_fee_settings")||"null")||{registrationFee:"",attemptFee:""};
+let currentJob=null;
+function save(){localStorage.setItem("ar_jobs",JSON.stringify(jobs));localStorage.setItem("ar_apps",JSON.stringify(applications));localStorage.setItem("ar_submissions",JSON.stringify(submissions));localStorage.setItem("ar_billing",JSON.stringify(billing));localStorage.setItem("ar_fee_settings",JSON.stringify(feeSettings));if(profile)localStorage.setItem("ar_profile",JSON.stringify(profile))}
+function money(n){return "KES "+Number(n).toLocaleString("en-KE")}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.remove("hidden");setTimeout(()=>t.classList.add("hidden"),2600)}
+function showPage(page){document.querySelectorAll("main>section").forEach(s=>s.classList.add("hidden"));document.getElementById(page+"Page").classList.remove("hidden");document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));if(page==="jobs")renderJobs();if(page==="dashboard")renderDashboard();if(page==="admin")renderAdmin();window.scrollTo({top:0,behavior:"smooth"})}
+document.querySelectorAll("nav button").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+function jobCard(j){return `<article class="card job-card"><div><span class="tag">${escapeHTML(j.category)}</span><h3>${escapeHTML(j.title)}</h3><p class="muted">${escapeHTML(j.description.slice(0,115))}${j.description.length>115?"…":""}</p></div><div class="job-meta"><span>◷ Flexible</span><span>${escapeHTML(j.skills||"Skills not specified")}</span></div><div class="job-bottom"><span class="price">${money(j.budget)}</span><button class="btn small" onclick="openJob(${j.id})">View project</button></div></article>`}
+function renderHome(){document.getElementById("heroJobs").textContent=jobs.length;document.getElementById("featuredJobs").innerHTML=jobs.slice(0,3).map(jobCard).join("")||'<div class="card empty">No projects posted yet.</div>'}
+function renderJobs(){const q=document.getElementById("searchJobs").value.toLowerCase(),cat=document.getElementById("categoryFilter").value;const list=jobs.filter(j=>(!cat||j.category===cat)&&(j.title+" "+j.description+" "+j.skills).toLowerCase().includes(q));document.getElementById("allJobs").innerHTML=list.map(jobCard).join("")||'<div class="card empty" style="grid-column:1/-1"><div class="emoji">🔎</div><h3>No projects found</h3><p>Try a different search or category.</p></div>'}
+function openJob(id){currentJob=jobs.find(j=>j.id===id);if(!currentJob)return;const already=applications.some(a=>a.jobId===id);document.getElementById("modalRoot").innerHTML=`<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><span class="tag">${escapeHTML(currentJob.category)}</span><button class="close" onclick="closeModal()">×</button></div><h2>${escapeHTML(currentJob.title)}</h2><p class="muted">${escapeHTML(currentJob.description)}</p><p><b>Budget:</b> ${money(currentJob.budget)}</p><p><b>Skills:</b> ${escapeHTML(currentJob.skills||"Not specified")}</p><p><b>Posted by:</b> ${escapeHTML(currentJob.client||"Community client")}</p>${already?`<button class="btn" onclick="openSubmissionForm(${currentJob.id})">Submit completed work</button>`:`<button class="btn" onclick="applyJob(${currentJob.id})">Apply for this project</button>`}<p class="muted" style="font-size:12px;margin-top:12px">Demo workflow. A live platform needs secure shared file storage and a backend.</p></div></div>`;document.getElementById("modalRoot").classList.remove("hidden")}
+function closeModal(){document.getElementById("modalRoot").classList.add("hidden")}
+function applyJob(id){if(!profile){closeModal();accountModal("Please create a demo profile before applying.");return}if(!billing.registrationPaid){closeModal();showFeeInfo("A registration payment is required before applying for or submitting work.");return}if(billing.attemptsUsed>=3&&!billing.cycleFeePaid){closeModal();showFeeInfo("You have used three attempts. A cycle payment is required before your next attempt.");return}if(applications.some(a=>a.jobId===id)){toast("You have already applied.");return}applications.push({jobId:id,status:"Application sent",date:new Date().toLocaleDateString()});billing.attemptsUsed++;billing.cycleFeePaid=false;save();closeModal();renderJobs();renderDashboard();toast("Demo application submitted.");}
+document.getElementById("searchJobs").addEventListener("input",renderJobs);document.getElementById("categoryFilter").addEventListener("change",renderJobs);
+function accountModal(message="Create a local demo profile to try the marketplace."){document.getElementById("modalRoot").innerHTML=`<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><h2>Welcome to A&R</h2><button class="close" onclick="closeModal()">×</button></div><p class="muted">${escapeHTML(message)}</p><form id="profileForm"><label>Your name</label><input id="profileName" required maxlength="60" placeholder="Your display name" value="${profile?escapeHTML(profile.name):""}"><label>Email address</label><input id="profileEmail" type="email" required placeholder="you@example.com" value="${profile?escapeHTML(profile.email):""}"><label>I want to</label><select id="profileRole"><option>Find freelance work</option><option>Post projects</option><option>Both</option></select><button class="btn" style="margin-top:18px" type="submit">Save demo profile</button></form><p class="muted" style="font-size:12px">This is not secure account registration. Your profile stays in this browser only.</p></div></div>`;document.getElementById("modalRoot").classList.remove("hidden");document.getElementById("profileForm").addEventListener("submit",e=>{e.preventDefault();profile={name:document.getElementById("profileName").value.trim(),email:document.getElementById("profileEmail").value.trim(),role:document.getElementById("profileRole").value};save();closeModal();updateAccount();renderDashboard();toast("Demo profile saved.");})}
+function updateAccount(){document.getElementById("accountBtn").textContent=profile?profile.name.split(" ")[0]:"Sign in"}
+document.getElementById("accountBtn").addEventListener("click",()=>accountModal());
+document.getElementById("postForm").addEventListener("submit",e=>{e.preventDefault();if(!profile){accountModal("Create a demo profile before posting a project.");return}const j={id:Date.now(),title:document.getElementById("jobTitle").value.trim(),category:document.getElementById("jobCategory").value,budget:Number(document.getElementById("jobBudget").value),description:document.getElementById("jobDescription").value.trim(),skills:document.getElementById("jobSkills").value.trim(),client:profile.name};jobs.unshift(j);save();e.target.reset();renderHome();toast("Project published in this browser.");showPage("jobs")});
+function renderDashboard(){document.getElementById("welcomeText").textContent=profile?`Welcome, ${profile.name}. Here is your marketplace activity.`:"Sign in or create a demo profile to personalize your workspace.";document.getElementById("accessStatus").textContent=billing.registrationPaid?"Registration marked paid (demo)":"Registration payment required";document.getElementById("feeSummary").textContent=`Registration fee: ${feeSettings.registrationFee!==""?"KES "+Number(feeSettings.registrationFee).toLocaleString("en-KE"):"not set"} · Fee after 3 attempts: ${feeSettings.attemptFee!==""?"KES "+Number(feeSettings.attemptFee).toLocaleString("en-KE"):"not set"}. Demo only; no money is collected.`;document.getElementById("attemptCount").textContent=billing.attemptsUsed;document.getElementById("statOpen").textContent=jobs.length;document.getElementById("statApplied").textContent=applications.length;document.getElementById("statEarnings").textContent="KES 0";const rows=applications.map(a=>{const j=jobs.find(x=>x.id===a.jobId);const sub=submissions.find(s=>s.jobId===a.jobId);return j?`<tr><td>${escapeHTML(j.title)}</td><td>${escapeHTML(j.category)}</td><td><span class="tag">${escapeHTML(sub?sub.status:a.status)}</span></td><td>${money(j.budget)}</td><td>${sub?"Submitted":`<button class="btn small" onclick="openSubmissionForm(${j.id})">Submit work</button>`}</td></tr>`:""}).join("");document.getElementById("activityRows").innerHTML=rows||'<tr><td colspan="5" class="muted">No activity yet. Browse projects to get started.</td></tr>';renderSubmissions()}
+function openSubmissionForm(jobId){
+  if(!profile){accountModal("Create a demo profile before submitting work.");return}
+  if(!billing.registrationPaid){showFeeInfo("A registration payment is required before uploading completed work.");return}
+  if(billing.attemptsUsed>=3&&!billing.cycleFeePaid){showFeeInfo("You have used three attempts. A cycle payment is required before continuing.");return}
+  const job=jobs.find(j=>j.id===jobId);
+  if(!job)return;
+  const existing=submissions.find(s=>s.jobId===jobId);
+  document.getElementById("modalRoot").innerHTML=`<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><h2>Submit completed work</h2><button class="close" onclick="closeModal()">×</button></div><p class="muted">Project: <b>${escapeHTML(job.title)}</b></p><form id="submissionForm"><label for="submissionNote">Message to the client</label><textarea id="submissionNote" rows="4" required maxlength="1000" placeholder="Summarize what you completed and any important details…">${existing?escapeHTML(existing.note):""}</textarea><label for="submissionFile">Attach your completed work</label><input id="submissionFile" type="file" required ${existing?"":" "}><p class="muted" style="font-size:12px">Demo supports selecting a file and recording its name, type and size. The file itself is not uploaded to a shared server yet.</p><button class="btn" style="margin-top:15px" type="submit">${existing?"Update submission":"Send work for review"}</button></form></div></div>`;
+  document.getElementById("modalRoot").classList.remove("hidden");
+  document.getElementById("submissionForm").addEventListener("submit",e=>{
+    e.preventDefault();
+    const file=document.getElementById("submissionFile").files[0];
+    if(!file && !existing){toast("Please choose a file to submit.");return}
+    const item={jobId,jobTitle:job.title,freelancer:profile.name,note:document.getElementById("submissionNote").value.trim(),fileName:file?file.name:existing.fileName,fileType:file?file.type:existing.fileType,fileSize:file?file.size:existing.fileSize,submittedAt:new Date().toLocaleString(),status:"Submitted for review"};
+    const index=submissions.findIndex(s=>s.jobId===jobId);
+    if(index>=0)submissions[index]=item;else submissions.push(item);
+    const app=applications.find(a=>a.jobId===jobId);if(app)app.status="Work submitted";
+    save();closeModal();renderDashboard();toast("Submission recorded in this browser.");
+  });
+}
+function renderSubmissions(){
+  const el=document.getElementById("submissionsList");if(!el)return;
+  const mine=submissions.filter(s=>profile&&s.freelancer===profile.name);
+  const posted=submissions.filter(s=>profile&&jobs.some(j=>j.id===s.jobId&&j.client===profile.name));
+  const visible=[...mine.map(s=>({...s,view:"Your submission"})),...posted.filter(s=>!mine.some(m=>m.jobId===s.jobId)).map(s=>({...s,view:"Client review"}))];
+  el.innerHTML=visible.map(s=>`<article class="card"><span class="tag">${escapeHTML(s.status)}</span><h3>${escapeHTML(s.jobTitle)}</h3><p class="muted">${escapeHTML(s.view)} · ${escapeHTML(s.freelancer)}</p><p>${escapeHTML(s.note)}</p><p class="muted" style="font-size:12px">File selected: ${escapeHTML(s.fileName)} · ${(s.fileSize/1024).toFixed(1)} KB</p>${s.view==="Client review"?`<button class="btn small" onclick="reviewSubmission(${s.jobId},'Approved')">Approve</button> <button class="btn secondary small" onclick="reviewSubmission(${s.jobId},'Revision requested')">Request revision</button>`:`<p class="muted" style="font-size:12px">Submitted ${escapeHTML(s.submittedAt)}</p>`}</article>`).join("")||'<div class="card empty" style="grid-column:1/-1"><div class="emoji">📎</div><h3>No submissions yet</h3><p>Apply for a project, then submit your completed work here.</p></div>';
+}
+function reviewSubmission(jobId,status){
+  const s=submissions.find(x=>x.jobId===jobId);if(!s)return;
+  s.status=status;save();renderDashboard();toast(status==="Approved"?"Demo submission approved.":"Revision requested in demo.");
+}
+function showFeeInfo(message="These are the planned access rules for Automotive & Research."){
+  document.getElementById("modalRoot").innerHTML=`<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><h2>Freelancer access & fees</h2><button class="close" onclick="closeModal()">×</button></div><p class="muted">${escapeHTML(message)}</p><div class="card" style="margin:12px 0"><b>1. Registration fee</b><p class="muted">Required once before applying for jobs or submitting work.</p><b>2. Attempt fee</b><p class="muted">After three job application attempts, a new fee is required before the next attempt. The counter resets after payment.</p></div><div class="notice">Demo only: the button below marks a test payment locally. It does not charge money or verify a real transaction. Real payment integration must be connected on the server before launch.</div><button class="btn" onclick="simulateRegistrationPayment()">Simulate registration payment</button><button class="btn secondary" style="margin:10px 0 0 8px" onclick="simulateCyclePayment()">Simulate 3-attempt fee</button><p class="muted" style="font-size:12px;margin-top:12px">Fee amounts shown in the Admin workspace are planning values only. A real payment provider and secure server verification are not connected.</p></div></div>`;
+  document.getElementById("modalRoot").classList.remove("hidden");
+}
+function simulateRegistrationPayment(){billing.registrationPaid=true;save();closeModal();renderDashboard();toast("Demo registration payment marked paid. No money charged.");}
+function simulateCyclePayment(){if(billing.attemptsUsed<3){toast("The three-attempt limit has not been reached.");return}billing.cycleFeePaid=true;billing.attemptsUsed=0;save();closeModal();renderDashboard();toast("Demo attempt fee marked paid. No money charged.");}
+
+function renderAdmin(){
+  document.getElementById("adminJobs").textContent=jobs.length;
+  document.getElementById("adminApps").textContent=applications.length;
+  document.getElementById("adminSubs").textContent=submissions.length;
+  document.getElementById("registrationFee").value=feeSettings.registrationFee;
+  document.getElementById("attemptFee").value=feeSettings.attemptFee;
+  document.getElementById("feeSettingsStatus").textContent=
+    `Current demo settings — registration: ${feeSettings.registrationFee!==""?"KES "+Number(feeSettings.registrationFee).toLocaleString("en-KE"):"not set"}; 3-attempt fee: ${feeSettings.attemptFee!==""?"KES "+Number(feeSettings.attemptFee).toLocaleString("en-KE"):"not set"}.`;
+  document.getElementById("adminJobRows").innerHTML=jobs.map(j=>
+    `<tr><td>${escapeHTML(j.title)}</td><td>${escapeHTML(j.client||"—")}</td><td>${money(j.budget)}</td><td><button class="btn secondary small" onclick="deleteDemoJob(${j.id})">Remove</button></td></tr>`
+  ).join("")||'<tr><td colspan="4" class="muted">No projects available.</td></tr>';
+  document.getElementById("adminSubmissionRows").innerHTML=submissions.map(x=>
+    `<tr><td>${escapeHTML(x.jobTitle)}</td><td>${escapeHTML(x.freelancer)}</td><td>${escapeHTML(x.status)}</td><td>${escapeHTML(x.fileName)} <span class="muted">(name only)</span></td></tr>`
+  ).join("")||'<tr><td colspan="4" class="muted">No submissions recorded.</td></tr>';
+}
+document.getElementById("feeSettingsForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const reg=document.getElementById("registrationFee").value;
+  const att=document.getElementById("attemptFee").value;
+  if((reg!==""&&Number(reg)<0)||(att!==""&&Number(att)<0)){toast("Enter zero or a positive amount.");return}
+  feeSettings={registrationFee:reg,attemptFee:att};save();renderAdmin();renderDashboard();
+  toast("Demo fee settings saved in this browser.");
+});
+function deleteDemoJob(id){
+  if(!confirm("Remove this demo project from this browser?"))return;
+  jobs=jobs.filter(j=>j.id!==id);
+  applications=applications.filter(a=>a.jobId!==id);
+  submissions=submissions.filter(x=>x.jobId!==id);
+  save();renderAdmin();renderHome();renderDashboard();renderJobs();
+  toast("Demo project removed.");
+}
+function exportBackup(){
+  const backup={exportedAt:new Date().toISOString(),jobs,applications,submissions,billing,feeSettings,profile};
+  const blob=new Blob([JSON.stringify(backup,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob);const a=document.createElement("a");
+  a.href=url;a.download="automotive-research-demo-backup.json";a.click();
+  URL.revokeObjectURL(url);toast("Demo data backup exported.");
+}
+
+function fillCategories(){document.getElementById("categoryFilter").innerHTML='<option value="">All categories</option>'+categories.map(c=>`<option>${c}</option>`).join("");document.getElementById("jobCategory").innerHTML=categories.map(c=>`<option>${c}</option>`).join("")}
+fillCategories();renderHome();updateAccount();
+</script>
+</body>
+</html>
